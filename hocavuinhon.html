@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Aquarium</title>
+    <style>
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            background-color: #001f3f; 
+        }
+
+        .aquarium {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to top, #00aaff 50%, #b2e0ff 100%); 
+        }
+
+        
+        @keyframes wave {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+            100% { transform: translateY(0); }
+        }
+
+       
+        .fish {
+            position: absolute;
+            width: 80px;
+            height: 50px; 
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: fishSwim linear infinite;
+            animation-duration: 10s; 
+        }
+
+        @keyframes fishSwim {
+            0% { left: -100px; top: calc(20% + (random() * 60%)); transform: scaleX(1); }
+            50% { left: calc(100vw - 80px); top: calc(20% + (random() * 60%)); transform: scaleX(1); }
+            51% { transform: scaleX(-1); } 
+            100% { left: -100px; top: calc(20% + (random() * 60%)); transform: scaleX(-1); }
+        }
+
+       
+        .turtle {
+            position: absolute;
+            width: 100px; 
+            height: 70px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: turtleSwim linear infinite;
+            animation-duration: 20s;
+        }
+
+        @keyframes turtleSwim {
+            0% { left: -100px; top: calc(30% + (random() * 40%)); transform: scaleX(1); }
+            50% { left: calc(100vw - 100px); top: calc(30% + (random() * 40%)); transform: scaleX(1); }
+            51% { transform: scaleX(-1); }
+            100% { left: -100px; top: calc(30% + (random() * 40%)); transform: scaleX(-1); }
+        }
+
+       
+        .jellyfish {
+            position: absolute;
+            width: 80px; 
+            height: 80px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: jellyfishFloat linear infinite;
+            
+           
+        }
+        .jellyfish1 {
+            background-image: url(/anhhoca/sua.hbvha-removebg-preview.png);
+            left: 15%;
+            top: 20%; 
+            animation-duration: 5s; 
+        }
+
+        .jellyfish2 {
+            background-image: url(/anhhoca/suabien-removebg-preview\ -\ Copy.png); 
+            left: 35%; 
+            top: 40%; 
+            animation-duration: 6s;
+        }
+
+        .jellyfish3 {
+            background-image: url(/anhhoca/sua.hbcb-removebg-preview.png); 
+            left: 55%; 
+            top: 25%; 
+            animation-duration: 7s;
+        }
+
+        .jellyfish4 {
+            background-image: url(/anhhoca/sua.hbh-removebg-preview.png); 
+            left: 75%; 
+            top: 30%; 
+            animation-duration: 8s;
+        }
+
+
+        @keyframes jellyfishFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-50px); } 
+            100% { transform: translateY(0); }
+        }
+        
+
+        
+        .starfish {
+            position: absolute;
+            width: 40px; 
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            bottom: 5%;
+            left: calc(5% + (random() * 90%));
+        }
+        .starfish1 {
+            background-image: url(/anhhoca/saobien-removebg-preview\ \(1\).png); 
+            left: 10%; 
+            bottom: 15%; 
+        }
+
+        .starfish2 {
+            background-image: url(/anhhoca/saobien.hdac-removebg-preview\ -\ Copy.png); 
+            left: 30%; 
+            bottom: 20%; 
+        }
+
+        .starfish3 {
+            background-image: url(/anhhoca/saobien-removebg-preview\ \(1\).png); 
+            left: 50%; 
+            bottom: 10%; 
+        }
+
+        .starfish4 {
+            background-image: url(/anhhoca/saobien.hdac-removebg-preview\ -\ Copy.png); 
+            left: 70%; 
+            bottom: 25%; 
+        }
+
+        
+        .coral {
+            position: absolute;
+            width: 120px; 
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            bottom: 0;
+            left: calc(5% + (random() * 90%));
+        }
+        
+        .coral1 { left: 2%; background-image: url(/anhhoca/rongbien-removebg-preview.png); }
+        .coral2 { left: 7%; background-image: url(/anhhoca/sanhodep.hbchu-removebg-preview.png); }
+        .coral3 { left: 12%; background-image: url(/anhhoca/sanhodep.hbsvb-removebg-preview\ -\ Copy.png); }
+        .coral4 { left: 17%; background-image: url(/anhhoca/sanhodep.hbchu-removebg-preview.png); }
+        .coral5 { left: 22%; background-image: url(/anhhoca/sanhodep.hbsvb-removebg-preview\ -\ Copy.png); }
+        .coral6 { left: 27%; background-image: url(/anhhoca/sanho.bcdv-removebg-preview.png); }
+        .coral7 { left: 32%; background-image: url(/anhhoca/sanhodep.hbchu-removebg-preview.png); }
+        .coral8 { left: 37%; background-image: url(/anhhoca/sanhodep.hbsvb-removebg-preview\ -\ Copy.png); }
+        .coral9 { left: 42%; background-image: url(/anhhoca/sanhodep.hbchu-removebg-preview.png); }
+        .coral10 { left: 47%; background-image: url(/anhhoca/sanhodep.hbchu-removebg-preview.png); }
+        .coral11 { left: 52%; background-image: url(/anhhoca/sanhodep.hbsvb-removebg-preview\ -\ Copy.png); }
+        .coral12 { left: 57%; background-image: url(/anhhoca/sanhodep.hbchu-removebg-preview.png); }
+        .coral13 { left: 62%; background-image: url(/anhhoca/sanho.bcdv-removebg-preview\ -\ Copy.png); }
+        .coral14 { left: 67%; background-image: url(/anhhoca/sanhodep.hbsvb-removebg-preview\ -\ Copy.png); }
+        .coral15 { left: 72%; background-image: url(/anhhoca/sanho.bcdv-removebg-preview.png); }
+        .coral16 { left: 77%; background-image: url(/anhhoca/sanhodep.hbchu-removebg-preview.png); }
+        .coral17 { left: 82%; background-image: url(/anhhoca/sanho.bcdv-removebg-preview\ -\ Copy.png); }
+        .coral18 { left: 87%; background-image: url(/anhhoca/sanhodep.hbsvb-removebg-preview\ -\ Copy.png); }
+        .coral19 { left: 92%; background-image: url(/anhhoca/rongbien-removebg-preview\ -\ Copy.png); }
+        .coral20 { left: 97%; background-image: url(/anhhoca/sanho.hbch-removebg-preview\ -\ Copy.png); }
+
+
+        
+        
+         
+         .crab {
+            position: absolute;
+            width: 60px; 
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: crabCrawl 2s linear infinite; 
+        }
+
+        .crab1 {
+            background-image: url(/anhhoca/concua-removebg-preview-removebg-preview.png); 
+            bottom: 10%; 
+            left: 5%;
+            animation-duration: 4s; 
+        }
+
+        .crab2 {
+            background-image: url(/anhhoca/concuadong-removebg-preview-removebg-preview.png); 
+            bottom: 15%; 
+            left: 85%;
+            animation-duration: 5s; 
+        }
+
+       
+        @keyframes crabCrawl {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(100px); } 
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="aquarium">
+       
+        <div class="fish" style="background-image: url(/anhhoca/ca.bvfhbvh-removebg-preview\ -\ Copy\ -\ Copy\ -\ Copy\ -\ Copy.png); top: 30%; animation-delay: 0s;"></div>
+        <div class="fish" style="background-image: url(/anhhoca/ca.ghvcvc-removebg-preview\ -\ Copy\ -\ Copy.png); top: 50%; animation-delay: 1s;"></div>
+        <div class="fish" style="background-image: url(/anhhoca/ca.hbfvf-removebg-preview\ -\ Copy\ -\ Copy\ -\ Copy.png); top: 40%; animation-delay: 2s;"></div>
+        <div class="fish" style="background-image: url(/anhhoca/ca.hvchb-removebg-preview.png); top: 60%; animation-delay: 3s;"></div>
+        <div class="fish" style="background-image: url(/anhhoca/ca.jhbchb-removebg-preview.png); top: 20%; animation-delay: 4s;"></div>
+        <div class="fish" style="background-image: url(/anhhoca/cachep-removebg-preview.png); top: 35%; animation-delay: 5s;"></div>
+        <div class="fish" style="background-image: url(/anhhoca/cadep-removebg-preview.png); top: 70%; animation-delay: 6s;"></div>
+        <div class="fish" style="background-image: url(/anhhoca/canhieumau-removebg-preview.png); top: 25%; animation-delay: 7s;"></div>
+        <div class="fish" style="background-image: url(/anhhoca/caratdep-removebg-preview.png); top: 55%; animation-delay: 8s;"></div>
+        <div class="fish" style="background-image: url(/anhhoca/canhieumau-removebg-preview.png); top: 65%; animation-delay: 9s;"></div>
+
+        
+        <div class="turtle" style="background-image: url(/anhhoca/ruabien-removebg-preview.png); top: 80%; animation-delay: 0s;"></div>
+        <div class="turtle" style="background-image: url(/anhhoca/rua-removebg-preview.png); top: 70%; animation-delay: 1s;"></div>
+        <div class="turtle" style="background-image: url(/anhhoca/ruabien-removebg-preview.png); top: 60%; animation-delay: 2s;"></div>
+        <div class="turtle" style="background-image: url(/anhhoca/rua-removebg-preview.png); top: 50%; animation-delay: 3s;"></div>
+
+        
+        <div class="jellyfish jellyfish1"></div>
+        <div class="jellyfish jellyfish2"></div>
+        <div class="jellyfish jellyfish3"></div>
+        <div class="jellyfish jellyfish4"></div>
+
+        
+        <div class="starfish starfish1"></div>
+        <div class="starfish starfish2"></div>
+        <div class="starfish starfish3"></div>
+        <div class="starfish starfish4"></div>
+
+        
+        <div class="coral coral1"></div>
+        <div class="coral coral2"></div>
+        <div class="coral coral3"></div>
+        <div class="coral coral4"></div>
+        <div class="coral coral5"></div>
+        <div class="coral coral6"></div>
+        <div class="coral coral7"></div>
+        <div class="coral coral8"></div>
+        <div class="coral coral9"></div>
+        <div class="coral coral10"></div>
+        <div class="coral coral11"></div>
+        <div class="coral coral12"></div>
+        <div class="coral coral13"></div>
+        <div class="coral coral14"></div>
+        <div class="coral coral15"></div>
+        <div class="coral coral16"></div>
+        <div class="coral coral17"></div>
+        <div class="coral coral18"></div>
+        <div class="coral coral19"></div>
+        <div class="coral coral20"></div>
+
+       
+        <div class="crab crab1"></div>
+        <div class="crab crab2"></div>
+       
+    </div>
+</body>
+</html>
