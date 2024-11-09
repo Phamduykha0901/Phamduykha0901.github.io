@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal CV</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f8ff;
+            padding: 40px;
+        }
+
+        .cv-container {
+            display: flex;
+            width: 900px;
+            background-color: #e0f7fa; 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        
+        .left-section {
+            width: 35%;
+            background-color: #007bb6; 
+            color: white;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .left-section img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            margin-bottom: 20px;
+        }
+
+        .left-section h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .left-section p {
+            font-size: 15px;
+            color: #dcdcdc;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .left-section .info-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #e0e0e0;
+            margin-bottom: 12px;
+        }
+
+        .left-section .info-item i {
+            margin-right: 10px;
+            color: #FFCC33; 
+            font-size: 18px;
+        }
+
+       
+        .right-section {
+            width: 65%;
+            padding: 30px 40px;
+            color: #333;
+        }
+
+        .section-header {
+            color: #FF7043;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #FFCC33; 
+        }
+
+        .section-content {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .section-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section-content ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        .section-content ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #FF7043; 
+            font-weight: bold;
+        }
+
+        .icon {
+            color: #FF7043; 
+            font-size: 18px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        
+        <div class="left-section">
+            <img src="/07280c4d-8115-4ceb-b73e-90679aaa1e04.jpg" alt="Profile Picture">
+            <h2>Pham Duy Kha</h2>
+            <p>First-year student, Information Technology major</p>
+            <div class="info-item"><i>📍</i>34 Street, Linh Dong Ward, Thu Duc District, Ho Chi Minh City</div>
+            <div class="info-item"><i>📞</i>0376985991</div>
+            <div class="info-item"><i>✉️</i>Phamduykha0106@gmail.com</div>
+            <div class="info-item"><i>⚥</i>Male</div>
+        </div>
+
+        
+        <div class="right-section">
+            <div class="section-header">Introduction</div>
+            <div class="section-content">
+                <p>I am a first-year student majoring in Information Technology at the University of Education, Ho Chi Minh City. I have a strong passion for programming and technology, and I am always looking for opportunities to develop my skills through practical projects and online courses.</p>
+            </div>
+
+            <div class="section-header">Skills</div>
+            <div class="section-content">
+                <ul>
+                    <li><span class="icon">💻</span>Basic programming with C++</li>
+                    <li><span class="icon">🌐</span>Web design with HTML5, CSS3, and Bootstrap</li>
+                    <li><span class="icon">🤝</span>Teamwork, leadership, and effective communication skills</li>
+                    <li><span class="icon">📚</span>Ability to self-learn and quickly research new technologies</li>
+                </ul>
+            </div>
+
+            <div class="section-header">Certificates</div>
+            <div class="section-content">
+                <ul>
+                    <li><span class="icon">📜</span>Basic Programming Certificate, Online Course</li>
+                    <li><span class="icon">📜</span>Web Design Certificate, University Course</li>
+                    <li><span class="icon">📜</span>Project Management Certificate, Online Course</li>
+                </ul>
+            </div>
+
+            <div class="section-header">Projects</div>
+            <div class="section-content">
+                <p><strong>Currently a first-year student at University of Education, Ho Chi Minh City</strong> (2024)</p>
+                <p><strong>Personal Website</strong> - Designed a simple personal website using HTML and CSS, showcasing personal information and contact details.</p>
+                <p><strong>Fun Aquarium Design</strong></p>
+                <p>During my studies, I have tried to explore interesting aspects of this field and discover many useful things, improving myself. I have learned a lot from the guidance of my teachers and peers.</p>
+            </div>
+
+            <div class="section-header">Hobbies</div>
+            <div class="section-content">
+                <ul>
+                    <li>⚽ Passionate about football and regularly participate in matches with friends</li>
+                    <li><span class="icon">🎮</span>Playing games and programming small games</li>
+                    <li><span class="icon">👩‍💻</span>Participating in technology clubs and workshops at university</li>
+                    <li><span class="icon">🌍</span>Traveling to explore new cultures and experience nature</li>
+                </ul>
+            </div>
+
+           
+            <div class="section-header">Personal Development Plan</div>
+            <div class="section-content">
+                <p>In the coming year, I plan to:</p>
+                <ul>
+                    <li><span class="icon">📘</span>Enhance my programming skills by learning Python and JavaScript</li>
+                    <li><span class="icon">🌐</span>Participate in practical programming projects to apply learned knowledge</li>
+                    <li><span class="icon">👥</span>Join the university’s technology club to expand my network and learn from peers</li>
+                    <li><span class="icon">📜</span>Complete online courses on new technologies like Artificial Intelligence and Machine Learning</li>
+                </ul>
+            </div>
+
+            <div class="section-header">References</div>
+            <div class="section-content">
+                <p><strong>Mr. Nguyen Van A</strong> - Web Design Lecturer<br>
+                Phone: 0908765432<br>Email: tranvanb@university.com</p>
+
+                <p><strong>Ms. Le Thi C</strong> - Teaching Assistant for Web Design<br>
+                Phone: 0902345678<br>Email: lethic@university.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
