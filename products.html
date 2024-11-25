@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm - SkyCoders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-icon img {
+            width: 30px;
+        }
+
+        .cart-icon .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+
+        /* Tùy chỉnh để hình ảnh trong giỏ hàng có kích thước đẹp */
+        .cart-item img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        /* Giấu thông báo "Giỏ hàng trống" khi có sản phẩm */
+        #empty-cart-message {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="bg-dark text-white p-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>SkyCoders Shop</h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="index.html" class="nav-link text-white">Trang chủ</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link text-white">Giới thiệu</a></li>
+                        <li class="nav-item"><a href="products.html" class="nav-link text-white">Sản phẩm</a></li>
+                        <li class="nav-item"><a href="register.html" class="nav-link text-white">Đăng ký</a></li>
+                        <li class="nav-item"><a href="login.html" class="nav-link text-white">Đăng nhập</a></li>
+                    </ul>
+                </nav>
+                <!-- Biểu tượng giỏ hàng -->
+                <div class="cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <!-- Chèn ảnh giỏ hàng của bạn -->
+                    <img src="/images/png-clipart-shopping-cart-shopping-cart-removebg-preview.png" alt="Giỏ hàng">
+                    <span id="cart-count" class="badge bg-danger">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sản phẩm -->
+    <section class="container my-5">
+        <h2 class="text-center">Danh sách sản phẩm</h2>
+        <div class="row">
+            <!-- Sản phẩm 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/bdn-KHACH-CR7.jpg" class="card-img-top" alt="Sản phẩm 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Đồ Thể Thao</h5>
+                        <p class="card-text">Áo Đấu Bồ Đào Nha Sân Khách</p>
+                        <button class="btn btn-primary" onclick="addToCart('Sản phẩm 1', '200,000', '/images/bdn-KHACH-CR7.jpg')">Thêm vào giỏ hàng</button>
+                        <a href="product-detail.html" class="btn btn-primary">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sản phẩm 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/c287d11b59935d233b1fa39297194c59.jpg_720x720q80.jpg" class="card-img-top" alt="Sản phẩm 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Đồ Thể Thao</h5>
+                        <p class="card-text">Áo Đấu Al Nassr Sân Nhà</p>
+                        <button class="btn btn-primary" onclick="addToCart('Sản phẩm 2', '300,000', '/images/c287d11b59935d233b1fa39297194c59.jpg_720x720q80.jpg')">Thêm vào giỏ hàng</button>
+                        <a href="product-detail.html" class="btn btn-primary">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sản phẩm 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/cn-11134207-7qukw-lfjdnlm94h4oad.jpg" class="card-img-top" alt="Sản phẩm 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Đồ Thể Thao</h5>
+                        <p class="card-text">Áo Đấu Bồ Đào Nha Sân Nhà</p>
+                        <button class="btn btn-primary" onclick="addToCart('Sản phẩm 3', '400,000', '/images/cn-11134207-7qukw-lfjdnlm94h4oad.jpg')">Thêm vào giỏ hàng</button>
+                        <a href="product-detail.html" class="btn btn-primary">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Giỏ hàng -->
+    <div class="modal" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Giỏ Hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cart-items-list" class="list-group">
+                        <!-- Sản phẩm thêm vào sẽ hiển thị tại đây -->
+                    </ul>
+                    <p id="empty-cart-message" class="text-center mt-3">Giỏ hàng của bạn đang trống.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="checkout.html" class="btn btn-primary">Đặt Hàng</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3">
+        <p>&copy; Skycodes. Tất cả quyền lợi được bảo vệ và đảm bảo chất lượng bởi chúng tôi.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const cartItems = [];
+        const cartItemsList = document.getElementById('cart-items-list');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const cartCount = document.getElementById('cart-count');
+    
+        function addToCart(productName, productPrice, productImage) {
+            cartItems.push({ name: productName, price: productPrice, image: productImage });
+            updateCart();
+        }
+    
+        function updateCart() {
+            cartItemsList.innerHTML = '';
+            if (cartItems.length === 0) {
+                emptyCartMessage.style.display = 'block';
+                cartCount.innerText = '0';
+            } else {
+                emptyCartMessage.style.display = 'none';
+                cartCount.innerText = cartItems.length;
+    
+                cartItems.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'list-group-item d-flex align-items-center cart-item';
+                    const productImg = document.createElement('img');
+                    productImg.src = item.image;
+                    productImg.alt = item.name;
+                    const productInfo = document.createElement('div');
+                    productInfo.innerHTML = `<strong>${item.name}</strong><br>${item.price} VND`;
+                    listItem.appendChild(productImg);
+                    listItem.appendChild(productInfo);
+                    cartItemsList.appendChild(listItem);
+                });
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - SkyCoders</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Thông Tin Thanh Toán</h2>
+        <form id="checkout-form">
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Họ và Tên</label>
+                <input type="text" class="form-control" id="fullName" placeholder="Nhập họ và tên" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Nhập email" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Số Điện Thoại</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" required>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Địa Chỉ Giao Hàng</label>
+                <textarea class="form-control" id="address" rows="3" placeholder="Nhập địa chỉ" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="notes" class="form-label">Ghi Chú (không bắt buộc)</label>
+                <textarea class="form-control" id="notes" rows="3" placeholder="Ghi chú cho đơn hàng"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Hoàn Tất Thanh Toán</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and custom form handling script -->
+    <script>
+        document.getElementById('checkout-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Show an alert with the submitted details
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const notes = document.getElementById('notes').value;
+
+            // Optionally, submit the form data to a server here
+
+            alert('Thông tin thanh toán của bạn đã được gửi!\n' +
+                'Họ và Tên: ' + fullName + '\n' +
+                'Email: ' + email + '\n' +
+                'Số Điện Thoại: ' + phone + '\n' +
+                'Địa Chỉ: ' + address + '\n' +
+                'Ghi Chú: ' + notes);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - SkyCoders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            background-color: #007bff; /* Thay màu nền nếu cần */
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .section {
+            padding: 50px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="bg-dark text-white p-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>SkyCoders Shop</h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="index.html" class="nav-link text-white">Trang chủ</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link text-white">Giới thiệu</a></li>
+                        <li class="nav-item"><a href="products.html" class="nav-link text-white">Sản phẩm</a></li>
+                        <li class="nav-item"><a href="register.html" class="nav-link text-white">Đăng ký</a></li>
+                        <li class="nav-item"><a href="login.html" class="nav-link text-white">Đăng nhập</a></li>
+                    </ul>
+                </nav>
+                <!-- Icon giỏ hàng -->
+                <div>
+                    <button type="button" class="btn position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <img src="/images/png-clipart-shopping-cart-shopping-cart-removebg-preview.png" alt="Giỏ hàng" style="width: 40px;">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Chào mừng đến với Shop của SkyCoders!</h1>
+            <p class="lead">Khám phá các sản phẩm chất lượng, giá tốt, và dịch vụ tuyệt vời!</p>
+        </div>
+    </section>
+
+    <!-- Giới thiệu về cửa hàng -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Giới thiệu về SkyCoders</h2>
+            <p class="text-center">
+                Chào mừng bạn đến với SkyCoders Shop – nơi cung cấp những sản phẩm chất lượng cao với giá trị vượt trội. Chúng tôi không chỉ đơn thuần là một cửa hàng trực tuyến, mà là một không gian mua sắm tràn ngập những lựa chọn tuyệt vời, được lựa chọn kỹ lưỡng từ các nhà cung cấp uy tín.
+
+Tại Shop của SkyCoders, mỗi sản phẩm đều mang đến một giá trị thực sự, từ những món đồ hữu ích trong cuộc sống hàng ngày cho đến những sản phẩm mang tính sáng tạo, độc đáo. Chúng tôi cam kết mang đến cho bạn:
+
+Chất lượng vượt trội: Tất cả sản phẩm đều được kiểm tra kỹ lưỡng trước khi đưa đến tay khách hàng, đảm bảo độ bền và tính năng hoàn hảo.
+Dịch vụ chăm sóc khách hàng tận tâm: Đội ngũ nhân viên của chúng tôi luôn sẵn sàng hỗ trợ bạn, giúp bạn có trải nghiệm mua sắm suôn sẻ và dễ dàng.
+Giao hàng nhanh chóng: Chúng tôi hiểu rằng thời gian là quý giá, vì vậy cam kết giao hàng trong thời gian nhanh nhất có thể.
+Mức giá cạnh tranh: Cung cấp những sản phẩm chất lượng với mức giá hợp lý, giúp bạn tiết kiệm mà vẫn nhận được sự hài lòng tối đa.
+Chúng tôi luôn tìm kiếm những cách thức mới mẻ để phục vụ khách hàng, và sẽ không ngừng cải tiến để mang đến những trải nghiệm mua sắm tuyệt vời nhất.
+
+Hãy ghé thăm Shop của SkyCoders để khám phá và lựa chọn những sản phẩm phù hợp nhất với nhu cầu của bạn!
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3">
+        <p>&copy; Skycodes. Tất cả quyền lợi được bảo vệ và đảm bảo chất lượng bởi chúng tôi.</p>
+    </footer>
+
+    <!-- Giỏ hàng Modal -->
+    <div class="modal" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Giỏ Hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Danh sách sản phẩm trong giỏ hàng -->
+                    <ul id="cart-items-list" class="list-group">
+                        <!-- Sản phẩm thêm vào sẽ hiển thị ở đây -->
+                    </ul>
+                    <p id="empty-cart-message" class="text-center text-muted mt-3" style="display: none;">Giỏ hàng của bạn trống.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <a href="checkout.html" class="btn btn-primary">Thanh toán</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const cartItems = []; // Mảng lưu trữ các sản phẩm trong giỏ hàng
+        const cartItemsList = document.getElementById('cart-items-list');
+        const emptyCartMessage = document.getElementById('empty-cart-message');
+        const cartCount = document.getElementById('cart-count');
+
+        // Hàm thêm sản phẩm vào giỏ hàng
+        function addToCart(productName, productPrice, productImage) {
+            // Thêm sản phẩm vào danh sách giỏ hàng
+            cartItems.push({ name: productName, price: productPrice, image: productImage });
+
+            // Cập nhật giao diện giỏ hàng
+            updateCart();
+        }
+
+        // Hàm cập nhật giỏ hàng
+        function updateCart() {
+            // Xóa các sản phẩm cũ trong giỏ hàng
+            cartItemsList.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                // Nếu giỏ hàng trống, hiển thị thông báo
+                emptyCartMessage.style.display = 'block';
+                cartCount.innerText = '0';
+            } else {
+                // Nếu giỏ hàng có sản phẩm, ẩn thông báo trống và hiển thị số lượng sản phẩm
+                emptyCartMessage.style.display = 'none';
+                cartCount.innerText = cartItems.length;
+
+                // Hiển thị từng sản phẩm trong giỏ hàng
+                cartItems.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'list-group-item d-flex align-items-center';
+
+                    // Thêm ảnh sản phẩm
+                    const productImg = document.createElement('img');
+                    productImg.src = item.image;
+                    productImg.alt = item.name;
+                    productImg.style.width = '50px';
+                    productImg.style.marginRight = '10px';
+
+                    // Thêm thông tin sản phẩm
+                    const productInfo = document.createElement('div');
+                    productInfo.innerHTML = `<strong>${item.name}</strong><br>${item.price} VND`;
+
+                    listItem.appendChild(productImg);
+                    listItem.appendChild(productInfo);
+                    cartItemsList.appendChild(listItem);
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

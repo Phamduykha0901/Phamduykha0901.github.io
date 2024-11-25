@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - SkyCoders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="bg-dark text-white p-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>SkyCoders Shop</h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="index.html" class="nav-link text-white">Trang chủ</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link text-white">Giới thiệu</a></li>
+                        <li class="nav-item"><a href="products.html" class="nav-link text-white">Sản phẩm</a></li>
+                        <li class="nav-item"><a href="register.html" class="nav-link text-white">Đăng ký</a></li>
+                        <li class="nav-item"><a href="login.html" class="nav-link text-white">Đăng nhập</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Chi tiết sản phẩm -->
+    <section class="container my-5">
+        <h2 class="text-center">Chi tiết sản phẩm</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/bdn-KHACH-CR7.jpg" alt="Sản phẩm" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h3>Đồ Thể Thao</h3>
+                <p>Áo đấu Bồ Đào Nha Sân Khách. Vải Thái siêu thoáng mát, thấm hút mồ hôi cực tốt</p>
+                <p><strong>Giá: 500,000 VNĐ</strong></p>
+                <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+    <!-- Chi tiết sản phẩm -->
+    <section class="container my-5">
+        <h2 class="text-center">Chi tiết sản phẩm</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/c287d11b59935d233b1fa39297194c59.jpg_720x720q80.jpg" alt="Sản phẩm" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h3>Đồ Thể Thao</h3>
+                <p>Áo đấu Al Nassr sân nhà. vải feed thái dày dặn </p>
+                <p><strong>Giá: 600,000 VNĐ</strong></p>
+                <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+    <!-- Chi tiết sản phẩm -->
+    <section class="container my-5">
+        <h2 class="text-center">Chi tiết sản phẩm</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/cn-11134207-7qukw-lfjdnlm94h4oad.jpg" alt="Sản phẩm" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h3>Đồ Thể Thao</h3>
+                <p>Áo Đấu Bồ Đào Nha Sân Nhà. Chất lượng tuyệt vời và giá trị tốt nhất cho bạn.</p>
+                <p><strong>Giá: 700,000 VNĐ</strong></p>
+                <button class="btn btn-primary">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3">
+        <p>&copy; Skycodes. Tất cả quyền lợi được bảo vệ và đảm bảo chất lượng bởi chúng tôi.</p>
+    </footer>
+
+    <!-- Form Đánh giá sản phẩm -->
+    <section id="product-review-form" class="section">
+        <div class="container">
+            <h2 class="text-center mb-4">Đánh giá sản phẩm</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Tên người dùng</label>
+                            <input type="text" id="username" class="form-control" placeholder="Nhập tên của bạn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rating">Đánh giá sao</label>
+                            <select id="rating" class="form-control" required>
+                                <option value="1">1 sao</option>
+                                <option value="2">2 sao</option>
+                                <option value="3">3 sao</option>
+                                <option value="4">4 sao</option>
+                                <option value="5">5 sao</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="review">Nhận xét</label>
+                            <textarea id="review" class="form-control" rows="4" placeholder="Nhập nhận xét của bạn..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Giỏ hàng -->
+    <div class="modal" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Giỏ Hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cart-items-list" class="list-group">
+                        <!-- Sản phẩm thêm vào sẽ hiển thị tại đây -->
+                    </ul>
+                    <p id="empty-cart-message" class="text-center mt-3">Giỏ hàng của bạn đang trống.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="checkout.html" class="btn btn-primary">Đặt Hàng</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thêm mã JavaScript trước thẻ đóng body -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngừng hành động mặc định của form (không reload trang)
+            alert('Cảm ơn bạn đã gửi đánh giá! Chúng tôi sẽ xem xét và phản hồi sớm.');
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
